@@ -4,29 +4,49 @@
 		<meta charset="utf-8">
 		<title>Nâu Studio</title>
 		<meta name="description" content="">
-		<link href='http://fonts.googleapis.com/css?family=Raleway:100' rel='stylesheet' type='text/css'>
 		<style type="text/css">
 			body {
-				background: #6a4024;
-				font-family: 'Raleway', sans-serif;
+				background: #503325;
 				height: 100%;
 				width: 100%;
 				margin: 0;
 			}
 
-			.title {
+			.teaser {
+				position: absolute;
+				margin-left: -336px;
+				margin-top: -247px;
+				left: 50%;
+				top: 50%;
+				width: 672px;
+				height: 494px;
+			}
+
+			.logo {
+				max-width: 100%;
+			}
+
+			@media screen and (max-width: 740px) {
+				.teaser {
+					width: 90%;
+					margin-left: 0;
+					left: 5%;
+				}
+			}
+
+			/*.title {
 				color: #fff;
 				font-weight: 100;
-				margin: auto;
-				margin-top: -0.6em;
-				position: absolute;
 				text-align: center;
-				top: 50%;
-				width: 100%;
-			}
+				margin: 0;
+				text-transform: capitalize;
+			}*/
 		</style>
 	</head>
 	<body>
-		<h1 class="title">Nâu Studio coming soon!</h1>
+		<div class="teaser">
+			<img class="logo" src="img/nau-teaser.png">
+			<!-- <h1 class="title">Keep calm and we are coming soon!</h1> -->
+		</div>
 	</body>
 </html>
