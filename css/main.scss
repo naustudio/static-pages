@@ -1,17 +1,76 @@
 /* ==========================================================================
+   Webfont
+   ========================================================================== */
+@font-face {
+    font-family: 'Happyfox-Condensed';
+    src: url('fonts/happyfox-condensed-webfont.eot');
+    src: url('fonts/happyfox-condensed-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/happyfox-condensed-webfont.woff') format('woff'),
+         url('fonts/happyfox-condensed-webfont.ttf') format('truetype'),
+         url('fonts/happyfox-condensed-webfont.svg#happy_foxcondensed') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ==========================================================================
    Variables
    ========================================================================== */
 
-$font-size: 1em !default;
-$font-family: Roboto, sans-serif;
+$font-size: 16px !default;
+$font-family: Helvetica, Arial, sans-serif;
+$font-family-title: Happyfox-Condensed, sans-serif;
 $font-weight-normal: 300 !default;
 $font-weight-bold: 400 !default;
 
 $color-nau: hsl(30, 30.8%, 42%); //8c6b4a
-$color-nau-darker: hsl(30, 50%, 30%);
+$color-text: #666666;
+$color-title: #beb270;
 $color-nau-lighter: hsl(31.1, 53.8%, 50.8%);
+$color-bg-dark: #111111;
 
-/* Normalize has some variables, so, import it after*/
+
+$em-base: $font-size;
+// It strips the unit of measure and returns it
+@function strip-unit($num) {
+	@return $num / ($num * 0 + 1);
+}
+
+// Converts "px" to "em" using the ($)em-base
+@function convert-to-em($value)    {
+	$value: strip-unit($value) / strip-unit($em-base) * 1em;
+	@if ($value == 0em) { $value: 0; } // Turn 0em into 0
+	@return $value;
+}
+
+/* ==========================================================================
+   Some useful functions
+   ========================================================================== */
+
+// Working in ems is annoying. Think in pixels by using this handy function, emCalc(#)
+// Just enter the number, no need to mention "px"
+@function emCalc($values...) {
+	$max: length($values); // Get the total number of parameters passed
+
+// If there is only 1 parameter, then return it as an integer.
+// This is done because a list can't be multiplied or divided even if it contains a single value
+	@if $max == 1 { @return convert-to-em(nth($values, 1)); }
+
+	$emValues: (); // This will eventually store the converted $values in a list
+	@for $i from 1 through $max {
+		$emValues: append($emValues, convert-to-em(nth($values, $i)));
+	}
+	@return $emValues;
+}
+
+//Calculate em from pixel where current selector has overriden font-size
+@function emLocal($pixel-size, $local-font-size) {
+	$scale: $em-base / $local-font-size;
+	@return emCalc($pixel-size * $scale);
+}
+
+/* ==========================================================================
+   Normalize has some variables, so, import it after
+   ========================================================================== */
 @import "normalize";
 
 /*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
@@ -30,7 +89,7 @@ button,
 input,
 select,
 textarea {
-	color: $color-nau-darker;
+	color: $color-text;
 	font-family: $font-family;
 	font-weight: $font-weight-normal;
 }
@@ -114,7 +173,7 @@ textarea {
  */
 
 a {
-	color: $color-nau-darker;
+	color: $color-text;
 	// text-decoration: underline;
 	font-weight: normal;
 }
@@ -171,8 +230,6 @@ a:hover {
 	}
 }
 
-
-
 .main {
 	padding-top: 70px;
 }
@@ -185,6 +242,7 @@ a:hover {
 	background: white;
 	box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2);
 	padding: 10px 0;
+	z-index: 1;
 }
 
 	.page-header img {
@@ -229,8 +287,8 @@ a:hover {
 	display: block;
 	right: 1em;
 	padding: 0.5em 1em;
-	border: 1px solid $color-nau-darker;
-	color: $color-nau-darker;
+	border: 1px solid $color-text;
+	color: $color-text;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
@@ -255,6 +313,139 @@ a:hover {
 	-moz-box-shadow: 0 0 1px 0 rgba(0,0,0,0.1);
 	box-shadow: 0 0 1px 0 rgba(0,0,0,0.1);
 }
+
+/******************
+	CAREER PAGE
+ ******************/
+
+.page-career {
+	background: $color-bg-dark;
+}
+
+.page-career h1, .page-career h2, .page-career h3, .page-career .title-text {
+	font-family: $font-family-title;
+	color: $color-title;
+	margin: 0;
+}
+
+.page-career h2 {
+	font-size: emCalc(80);
+}
+
+.page-career h4 {
+	font-family: $font-family-title;
+	font-size: emCalc(64);
+	margin: 10px auto;
+}
+
+.page-career .title-text {
+	text-align: center;
+}
+
+.page-career .page-header nav {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.page-career .page-header nav a {
+	font-family: $font-family-title;
+	font-size: 32px;
+	text-decoration: none;
+	display: inline-block;
+	margin: 0 0.5em;
+}
+
+.page-career .sticky-bg {
+	width: 100%;
+	height: 100%;
+	background-image: url(../img/bg-blackboard.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: fixed;
+	top: 0;
+	z-index: -1;
+}
+
+.page-career .page-header {
+	background: $color-bg-dark;
+}
+
+.page-career .content {
+	width: 100%;
+	max-width: none;
+	padding: 0;
+	position: relative;
+}
+
+.page-career .job-brief {
+	max-width: 900px;
+	margin: auto;
+	padding: 0 20px;
+}
+
+.page-career .job-brief ul {
+	padding: 0 15px;
+}
+
+.page-career .job-brief ul li {
+	margin: 1em 0;
+}
+
+.page-career .wewant-banner {
+	width: 100%;
+	text-align: center;
+	position: relative;
+}
+
+.page-career .wewant-banner img {
+	max-width: 100%;
+}
+
+.page-career .wewant-banner .nau-logo {
+	position: absolute;
+	width: 162px;
+	margin-left: -81px;
+	left: 50%;
+	bottom: -30px;
+}
+
+.page-career .who-we-are-header {
+	background: url(../careers/img/pink_line.png) repeat;
+	width: 100%;
+	padding: emLocal(12, 114) 0;
+	font-size: emCalc(114);
+	margin-top: 70px;
+}
+
+.page-career .location-header {
+	background: url(../careers/img/benthanh.png) center center no-repeat;
+	width: 100%;
+	height: 214px;
+	font-size: emCalc(64);
+	text-align: center;
+	background-size: auto 100%;
+	line-height: 390px;
+	margin-bottom: 60px;
+}
+
+.page-career .job-brief-header {
+	background: url(../careers/img/yellow_line.png) center center no-repeat;
+	width: 100%;
+	height: 363px;
+	margin-top: 70px;
+	text-align: center;
+	line-height: 363px;
+}
+
+.float-right {
+	float: right;
+	margin-left: 2em;
+}
+
+.double-spacing {
+	line-height: 2;
+}
+
 
 /* ==========================================================================
    Helper classes

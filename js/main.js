@@ -26,6 +26,5 @@
 	'use strict';
 
 	//just for fun, showing Nau's ASCII art in browser console
-	var nauHeader = document.getElementById('nau-header').innerText;
-	console.log(nauHeader);
+	console.log(' _   _    _   _   _     ____ _____ _   _ ____ ___ ___\n| \\ | |  / \\ | | | |   / ___|_   _| | | |  _ \\_ _/ _ \\\n|  \\| | / _ \\| | | |   \\___ \\ | | | | | | | | | | | | |\n| |\\  |/ ___ \\ |_| |    ___) || | | |_| | |_| | | |_| |\n|_| \\_/_/   \\_\\___/    |____/ |_|  \\___/|____/___\\___/');
 }());
