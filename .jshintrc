@@ -1,5 +1,6 @@
 {
     "node": false,
+    "devel": true,
     "browser": true,
     "esnext": true,
     "bitwise": true,

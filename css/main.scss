@@ -12,15 +12,15 @@
     font-style: normal;
 }
 
-/* ==========================================================================
-   Variables
-   ========================================================================== */
+// ==========================================================================
+// Variables
+// ==========================================================================
 
 $font-size: 16px !default;
 $font-family: Helvetica, Arial, sans-serif;
 $font-family-title: Happyfox-Condensed, sans-serif;
-$font-weight-normal: 300 !default;
-$font-weight-bold: 400 !default;
+$font-weight-normal: 400 !default;
+$font-weight-bold: 600 !default;
 
 $color-nau: hsl(30, 30.8%, 42%); //8c6b4a
 $color-text: #666666;
@@ -42,9 +42,9 @@ $em-base: $font-size;
 	@return $value;
 }
 
-/* ==========================================================================
-   Some useful functions
-   ========================================================================== */
+// ==========================================================================
+// Some useful functions
+// ==========================================================================
 
 // Working in ems is annoying. Think in pixels by using this handy function, emCalc(#)
 // Just enter the number, no need to mention "px"
@@ -68,9 +68,9 @@ $em-base: $font-size;
 	@return emCalc($pixel-size * $scale);
 }
 
-/* ==========================================================================
-   Normalize has some variables, so, import it after
-   ========================================================================== */
+// ==========================================================================
+// Normalize has some variables, so, import it after
+// ==========================================================================
 @import "normalize";
 
 /*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
@@ -322,24 +322,59 @@ a:hover {
 	background: $color-bg-dark;
 }
 
-.page-career h1, .page-career h2, .page-career h3, .page-career .title-text {
+.page-career .page-header {
+	background: $color-bg-dark;
+	-webkit-transform: translate3d(0, -100%, 0);
+	-moz-transform: translate3d(0, -100%, 0);
+	-ms-transform: translate3d(0, -100%, 0);
+	-o-transform: translate3d(0, -100%, 0);
+	transform: translate3d(0, -100%, 0);
+
+	-webkit-transition: -webkit-transform 0.5s;
+	-moz-transition: -moz-transform 0.5s;
+	-ms-transition: -ms-transform 0.5s;
+	-o-transition: -o-transform 0.5s;
+	transition: transform 0.5s;
+}
+
+.page-career .page-header--visible {
+	-webkit-transform: translate3d(0, 0, 0);
+	-moz-transform: translate3d(0, 0, 0);
+	-ms-transform: translate3d(0, 0, 0);
+	-o-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+
+.page-career .page-header img {
+	margin: 0 20px 0 0;
+}
+
+.page-career .main {
+	padding-top: 0;
+}
+
+.page-career h1, .page-career h2, .page-career h3 {
 	font-family: $font-family-title;
-	color: $color-title;
 	margin: 0;
 }
 
-.page-career h2 {
-	font-size: emCalc(80);
+.page-career .how-to-apply-header {
+	font-size: emCalc(70);
 }
 
 .page-career h4 {
 	font-family: $font-family-title;
-	font-size: emCalc(64);
+	font-size: emCalc(70);
 	margin: 10px auto;
+}
+
+.page-career .hili-color {
+	color: $color-title;
 }
 
 .page-career .title-text {
 	text-align: center;
+	font-family: $font-family-title;
 }
 
 .page-career .page-header nav {
@@ -366,10 +401,6 @@ a:hover {
 	z-index: -1;
 }
 
-.page-career .page-header {
-	background: $color-bg-dark;
-}
-
 .page-career .content {
 	width: 100%;
 	max-width: none;
@@ -377,17 +408,17 @@ a:hover {
 	position: relative;
 }
 
-.page-career .job-brief {
+.page-career .center-content {
 	max-width: 900px;
 	margin: auto;
 	padding: 0 20px;
 }
 
-.page-career .job-brief ul {
+.page-career .center-content ul {
 	padding: 0 15px;
 }
 
-.page-career .job-brief ul li {
+.page-career .center-content ul li {
 	margin: 1em 0;
 }
 
@@ -415,6 +446,7 @@ a:hover {
 	padding: emLocal(12, 114) 0;
 	font-size: emCalc(114);
 	margin-top: 70px;
+	color: $color-title;
 }
 
 .page-career .location-header {
@@ -425,25 +457,181 @@ a:hover {
 	text-align: center;
 	background-size: auto 100%;
 	line-height: 390px;
-	margin-bottom: 60px;
+	margin: 30px 0 60px 0;
+	color: $color-title;
 }
 
 .page-career .job-brief-header {
-	background: url(../careers/img/yellow_line.png) center center no-repeat;
+	background: url(../careers/img/yellow_line.png) center center repeat-x;
 	width: 100%;
-	height: 363px;
-	margin-top: 70px;
+	height: 259px;
 	text-align: center;
 	line-height: 363px;
+	color: $color-title;
+	font-size: emCalc(80);
 }
 
-.float-right {
+.page-career .love-brew-banner {
+	background: url(../careers/img/beer_coffee_bike.png) 0 -50px no-repeat;
+	width: 200px;
+	height: 260px;
+	margin-top: 50px;
+}
+
+.page-career .fun-tabulous-banner {
+	background: url(../careers/img/beer_coffee_bike.png) -610px -50px no-repeat;
+	width: 287px;
+	height: 310px;
+	margin-top: 50px;
+}
+
+.page-career .beer-banner {
+	background: url(../careers/img/beer_coffee_bike.png) -200px 0 no-repeat;
+	width: 410px;
+	height: 433px;
+	margin-top: 100px;
+}
+
+.page-career .love-brew-banner .label,
+.page-career .fun-tabulous-banner .label,
+.page-career .beer-banner .label {
+	font-size: emCalc(30);
+	width: 300px;
+	display: block;
+	position: relative;
+}
+
+.page-career .love-brew-banner .label {
+	text-align: left;
+	top: 10%;
+	left: 70%;
+}
+
+.page-career .fun-tabulous-banner .label {
+	text-align: left;
+	top: 71%;
+	left: 45%;
+}
+
+.page-career .beer-banner .label {
+	left: -220px;
+	top: 340px;
+	font-size: emCalc(61);
+	line-height: 0.7;
+}
+
+.page-career .beer-banner .label small {
+	font-size: emLocal(30, 61);
+}
+
+.page-career .sketch-line {
+	border: none;
+	background: url(../careers/img/sketch_line.png) center top no-repeat;
+	background-size: 100% 200%;
+	height: 137px;
+	width: 100%;
+	margin: 2em 0;
+}
+
+.page-career .passion-banner {
+	width: 100%;
+	height: 0;
+	padding-bottom: 50%;
+	margin: 50px 0 20px 0;
+	position: relative;
+}
+
+
+.page-career .passion-banner .decor-passion {
+	max-width: 100%;
+}
+.page-career .we-need-header {
+	font-size: emCalc(60);
+}
+
+.page-career .passion-banner .label {
+	font-family: $font-family-title;
+	font-size: emCalc(30);
+	position: absolute;
+}
+
+.page-career .passion-banner .great-passion {
+	top: 8%;
+	left: 38%;
+}
+
+.page-career .passion-banner .qualification {
+	top: 51%;
+	left: 87%;
+}
+
+.page-career .passion-banner .chance-header {
+	font-size: emCalc(80);
+	color: $color-title;
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	line-height: 1;
+}
+
+.page-career .float-left {
+	float: left;
+}
+
+.page-career .float-right {
 	float: right;
+}
+
+.page-career .decor01 {
 	margin-left: 2em;
+}
+
+.page-career .decor02 {
+	margin-right: 2em;
+	width: 230px;
+}
+
+.page-career .footer {
+	border: none;
+	margin-bottom: 50px;
+	position: relative;
+	width: auto;
+}
+
+.page-career .footer .sketch-line {
+	background-position: center bottom;
+
+}
+
+.page-career .copyright {
+	position: absolute;
+	bottom: -30px;
+	margin: 0;
+}
+
+.page-career a {
+	text-decoration: none;
+	color: $color-nau;
+}
+
+.page-career a:active,
+.page-career a:hover {
+	color: lighten($color-nau, 20%);
 }
 
 .double-spacing {
 	line-height: 2;
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (max-width: 870px) {
+
+	.page-career .passion-banner .chance-header {
+		font-size: emCalc(60);
+	}
+
+
+
 }
 
 
