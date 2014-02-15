@@ -328,17 +328,18 @@ a:hover {
 
 .page-career .page-header {
 	background: $color-bg-dark;
+	white-space: nowrap;
 	-webkit-transform: translate3d(0, -100%, 0);
 	-moz-transform: translate3d(0, -100%, 0);
 	-ms-transform: translateY(-100%);
 	-o-transform: translateY(-100%);
 	transform: translate3d(0, -100%, 0);
 
-	-webkit-transition: -webkit-transform 0.5s;
-	-moz-transition: -moz-transform 0.5s;
-	-ms-transition: -ms-transform 0.5s;
-	-o-transition: -o-transform 0.5s;
-	transition: transform 0.5s;
+	-webkit-transition: -webkit-transform 0.3s;
+	-moz-transition: -moz-transform 0.3s;
+	-ms-transition: -ms-transform 0.3s;
+	-o-transition: -o-transform 0.3s;
+	transition: transform 0.3s;
 }
 
 .page-career .page-header--visible {
@@ -390,10 +391,14 @@ a:hover {
 
 .page-career .page-header nav a {
 	font-family: $font-family-title;
-	font-size: 32px;
+	font-size: emCalc(32);
 	text-decoration: none;
 	display: inline-block;
 	margin: 0 0.5em;
+}
+
+.page-career .page-header nav .short {
+	display: none;
 }
 
 .page-career .sticky-bg {
@@ -441,9 +446,11 @@ a:hover {
 .page-career .wewant-banner .nau-logo {
 	position: absolute;
 	width: 162px;
+	height: 162px;
 	margin-left: -81px;
+	margin-bottom: -81px;
 	left: 50%;
-	bottom: -30px;
+	bottom: 10%;
 }
 
 .page-career .who-we-are-header {
@@ -463,18 +470,27 @@ a:hover {
 	text-align: center;
 	background-size: auto 100%;
 	line-height: 390px;
-	margin: 30px 0 60px 0;
+	margin: 0.5em 0 1em 0;
 	color: $color-title;
 }
 
 .page-career .job-brief-header {
 	background: url(../careers/img/yellow_line.png) center center repeat-x;
+	background-size: auto 100%;
 	width: 100%;
 	height: 259px;
-	text-align: center;
-	line-height: 363px;
-	color: $color-title;
+	position: relative;
 	font-size: emCalc(80);
+	line-height: 1;
+}
+
+.page-career .job-brief-header .label {
+	position: absolute;
+	bottom: 10%;
+	color: $color-title;
+	width: 100%;
+	font-size: inherit;
+	text-align: center;
 }
 
 .page-career .love-brew-banner {
@@ -493,7 +509,7 @@ a:hover {
 
 .page-career .beer-banner {
 	background: url(../careers/img/beer_coffee_bike.png) -200px 0 no-repeat;
-	width: 410px;
+	width: 370px;
 	height: 433px;
 	margin-top: 150px;
 }
@@ -639,10 +655,168 @@ a:hover {
 }
 
 
-/* Nexus 7 portrait, iPhone and below */
+/* Nexus 7 portrait*/
 @media only screen and (max-width: 650px) {
+	.page-career .beer-banner.float-left {
+		float: right;
+		margin: 10px 0;
+	}
 
+	.page-career .page-header nav a {
+		font-size: emCalc(28);
+	}
 
+	.page-career .love-brew-banner.float-left,
+	.page-career .fun-tabulous-banner.float-right {
+		float: left;
+		margin: 10px 0;
+	}
+
+	.page-career .wewant-banner .nau-logo {
+		width: 140px;
+		height: 140px;
+		margin-left: -70px;
+		margin-bottom: -70px;
+		bottom: 5%;
+	}
+
+	/*to this level, we use scale to simplify things*/
+	.page-career .passion-banner {
+		width: 610px;
+		height: 305px;
+		padding: 0;
+		margin: -20px 0;
+		margin-left: -305px;
+		position: relative;
+		left: 50%;
+		-webkit-transform: scale(0.7);
+		-moz-transform: scale(0.7);
+		-ms-transform: scale(0.7);
+		-o-transform: scale(0.7);
+		transform: scale(0.7);
+	}
+
+	.page-career .decor02 {
+		width: 200px;
+	}
+
+	.page-career .beer-banner.float-left {
+		float: right;
+		margin: -70px 0;
+		-webkit-transform: scale(0.6);
+		-moz-transform: scale(0.6);
+		-ms-transform: scale(0.6);
+		-o-transform: scale(0.6);
+		transform: scale(0.6);
+
+		-webkit-transform-origin: right;
+		-moz-transform-origin: right;
+		-ms-transform-origin: right;
+		-o-transform-origin: right;
+		transform-origin: right;
+	}
+
+	.page-career .job-brief-header {
+		height: 200px;
+		font-size: emCalc(70);
+	}
+
+}
+
+/* Iphone / Nexus 4 portrait*/
+@media only screen and (max-width: 384px) {
+	.page-career p {
+		clear: both;
+	}
+	.page-career h4 {
+		font-size: emCalc(60);
+		margin: 5px auto;
+	}
+	.page-career .page-header img {
+		margin-right: 10px;
+	}
+
+	.page-career .page-header nav .short {
+		display: inline;
+	}
+
+	.page-career .page-header nav .long {
+		display: none;
+	}
+
+	.page-career .sketch-line {
+		background-size: 150% 200%;
+		height: 70px;
+		margin: 1em 0;
+	}
+
+	.page-career .who-we-are-header {
+		font-size: 5em;
+	}
+
+	.page-career .location-header {
+		height: 150px;
+		font-size: 3em;
+		line-height: 260px;
+	}
+
+	.page-career .beer-banner.float-left {
+		margin: -130px 0;
+		-webkit-transform: scale(0.55);
+		-moz-transform: scale(0.55);
+		-ms-transform: scale(0.55);
+		-o-transform: scale(0.55);
+		transform: scale(0.55);
+	}
+
+	.page-career .love-brew-banner.float-left,
+	.page-career .fun-tabulous-banner.float-right {
+		-webkit-transform: scale(0.75);
+		-moz-transform: scale(0.75);
+		-ms-transform: scale(0.75);
+		-o-transform: scale(0.75);
+		transform: scale(0.75);
+
+		-webkit-transform-origin: left;
+		-moz-transform-origin: left;
+		-ms-transform-origin: left;
+		-o-transform-origin: left;
+		transform-origin: left;
+	}
+
+	.page-career .wewant-banner .nau-logo {
+		width: 120px;
+		height: 120px;
+		margin-left: -60px;
+		margin-bottom: -60px;
+		bottom: 0;
+	}
+
+	.page-career .decor01 {
+		display: none;
+	}
+
+	.page-career .decor02 {
+		width: 180px;
+		float: none;
+		margin: auto;
+		display: block;
+	}
+
+	.page-career .job-brief-header {
+		height: 180px;
+		font-size: emCalc(58);
+	}
+
+	.page-career .passion-banner {
+		margin-top: -50px;
+		margin-bottom: -50px;
+		-webkit-transform: scale(0.5);
+		-moz-transform: scale(0.5);
+		-ms-transform: scale(0.5);
+		-o-transform: scale(0.5);
+		transform: scale(0.5);
+	}
 }
 
 /* ==========================================================================

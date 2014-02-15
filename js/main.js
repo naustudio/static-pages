@@ -31,18 +31,20 @@
     // monitor scroll and add page header
     var body = doc.body,
         headerVisible = false,
+        lastScrollTop = 0,
         pageHeader = doc.getElementById('page-header');
 
     win.onscroll = function () {
         //getting cross-browser body scroll position, according to this: http://forums.asp.net/t/1618316.aspx
         var scrollTop = body.scrollTop || doc.documentElement.scrollTop || win.pageYOffset || 0,
-            isVisible = scrollTop > 300;
+            delta = (lastScrollTop - scrollTop),
+            isVisible = (scrollTop > 200 && delta > 0) ;
 
-        console.log('onscroll', scrollTop, isVisible);
+        // console.log('onscroll', lastScrollTop,  scrollTop, lastScrollTop - scrollTop, isVisible);
+        lastScrollTop = scrollTop;
 
         if (isVisible !== headerVisible) {
             headerVisible = isVisible;
-
 
             if (headerVisible) {
                 pageHeader.className = 'page-header page-header--visible';
