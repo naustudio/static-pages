@@ -1,5 +1,6 @@
 // Avoid `console` errors in browsers that lack a console.
 (function() {
+    'use strict';
     var method;
     var noop = function () {};
     var methods = [
@@ -22,9 +23,8 @@
 }());
 
 
-(function (doc) {
-	'use strict';
-
+(function (win, doc) {
+    'use strict';
 	//just for fun, showing Nau's ASCII art in browser console
 	console.log(' _   _    _   _   _     ____ _____ _   _ ____ ___ ___\n| \\ | |  / \\ | | | |   / ___|_   _| | | |  _ \\_ _/ _ \\\n|  \\| | / _ \\| | | |   \\___ \\ | | | | | | | | | | | | |\n| |\\  |/ ___ \\ |_| |    ___) || | | |_| | |_| | | |_| |\n|_| \\_/_/   \\_\\___/    |____/ |_|  \\___/|____/___\\___/');
 
@@ -33,10 +33,12 @@
         headerVisible = false,
         pageHeader = doc.getElementById('page-header');
 
-    doc.onscroll = function () {
-        var isVisible = body.scrollTop > 400;
+    win.onscroll = function () {
+        //getting cross-browser body scroll position, according to this: http://forums.asp.net/t/1618316.aspx
+        var scrollTop = body.scrollTop || doc.documentElement.scrollTop || win.pageYOffset || 0,
+            isVisible = scrollTop > 300;
 
-        console.log('onscroll', body.scrollTop, isVisible);
+        console.log('onscroll', scrollTop, isVisible);
 
         if (isVisible !== headerVisible) {
             headerVisible = isVisible;
@@ -50,4 +52,4 @@
         }
     };
 
-}(document));
+}(window, document));
