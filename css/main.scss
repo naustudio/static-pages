@@ -1,17 +1,3 @@
-/* ==========================================================================
-   Webfont
-   ========================================================================== */
-@font-face {
-    font-family: 'Happyfox-Condensed';
-    src: url('fonts/happyfox-condensed-webfont.eot');
-    src: url('fonts/happyfox-condensed-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/happyfox-condensed-webfont.woff') format('woff'),
-         url('fonts/happyfox-condensed-webfont.ttf') format('truetype'),
-         url('fonts/happyfox-condensed-webfont.svg#happy_foxcondensed') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
 // ==========================================================================
 // Variables
 // ==========================================================================
@@ -173,7 +159,6 @@ textarea {
  */
 
 a {
-	color: $color-text;
 	// text-decoration: underline;
 	font-weight: normal;
 }
@@ -196,12 +181,25 @@ a:hover {
 /* ==========================================================================
    NAU STUDIO STYLES
    ========================================================================== */
+$white-text: #fefefe;
 
 .page-teaser {
-	background: #503325;
+	background: $color-bg-dark;
 	height: 100%;
 	width: 100%;
 	margin: 0;
+	color: $white-text;
+	font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
+	font-weight: 300;
+}
+
+.page-teaser a {
+	color: $white-text;
+	text-decoration: none;
+}
+
+.page-teaser a:hover {
+	text-decoration: underline;
 }
 
 .teaser {
@@ -209,7 +207,7 @@ a:hover {
 	margin-left: -250px;
 	margin-top: -184px;
 	left: 50%;
-	top: 50%;
+	top: 45%;
 	width: 500px;
 	height: 368px;
 }
@@ -218,6 +216,17 @@ a:hover {
 		max-width: 100%;
 		display: block;
 		margin: auto;
+	}
+
+	.teaser .recruit {
+		font-size: 0.8em;
+		margin-top: 4em;
+		text-align: center;
+	}
+
+	.teaser .recruit h3 {
+		font-weight: 300;
+		text-transform: uppercase;
 	}
 
 @media screen and (max-width: 740px) {
@@ -326,6 +335,10 @@ a:hover {
 	background: $color-bg-dark;
 }
 
+.page-career a {
+	color: $color-text;
+}
+
 .page-career .page-header {
 	background: $color-bg-dark;
 	white-space: nowrap;
@@ -401,7 +414,7 @@ a:hover {
 	display: none;
 }
 
-.page-career .sticky-bg {
+.sticky-bg {
 	width: 100%;
 	height: 100%;
 	background-image: url(../img/bg-blackboard.jpg);
