@@ -26,7 +26,8 @@
 (function (win, doc) {
     'use strict';
 	//just for fun, showing Nau's ASCII art in browser console
-	console.log(' _   _    _   _   _     ____ _____ _   _ ____ ___ ___\n| \\ | |  / \\ | | | |   / ___|_   _| | | |  _ \\_ _/ _ \\\n|  \\| | / _ \\| | | |   \\___ \\ | | | | | | | | | | | | |\n| |\\  |/ ___ \\ |_| |    ___) || | | |_| | |_| | | |_| |\n|_| \\_/_/   \\_\\___/    |____/ |_|  \\___/|____/___\\___/');
+    var ASCII_ART = '   _.._             _.._           .--┐\n .`--.  \'.        .\'  .-`\'.       |   |\n.   .-\\   \\  (`) .   /-.   \\      |   |\n|   |  \\   \\     |   |  \\   \\     |   |\n|   |   \\   \\    |   |   \\   \\    |   |\n|   |    \\   \\   |   |    \\   \\   |   |\n|   |     \\   \\  |   |     \\   \\  |   |\n|   |      \\   `-/   |      \\   \\-\'   |\n|   |       \\_.-`   ,\'  (`)  \\   `-._.\'\n└--`         `-...-`          `-...-`\nNau Studio';
+	console.log(ASCII_ART);
 
     // monitor scroll and add page header
     var body = doc.body,
