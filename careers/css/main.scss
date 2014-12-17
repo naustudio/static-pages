@@ -467,7 +467,7 @@ $white-text: #fefefe;
 }
 
 .page-career .who-we-are-header {
-	background: url(../careers/img/pink_line.png) repeat;
+	background: url(../img/pink_line.png) repeat;
 	width: 100%;
 	padding: emLocal(12, 114) 0;
 	font-size: emCalc(114);
@@ -476,7 +476,7 @@ $white-text: #fefefe;
 }
 
 .page-career .location-header {
-	background: url(../careers/img/benthanh.png) center center no-repeat;
+	background: url(../img/benthanh.png) center center no-repeat;
 	width: 100%;
 	height: 214px;
 	font-size: emCalc(64);
@@ -488,7 +488,7 @@ $white-text: #fefefe;
 }
 
 .page-career .job-brief-header {
-	background: url(../careers/img/yellow_line.png) center center repeat-x;
+	background: url(../img/yellow_line.png) center center repeat-x;
 	background-size: auto 100%;
 	width: 100%;
 	height: 259px;
@@ -507,21 +507,21 @@ $white-text: #fefefe;
 }
 
 .page-career .love-brew-banner {
-	background: url(../careers/img/beer_coffee_bike.png) 0 -50px no-repeat;
+	background: url(../img/beer_coffee_bike.png) 0 -50px no-repeat;
 	width: 200px;
 	height: 260px;
 	margin-top: 50px;
 }
 
 .page-career .fun-tabulous-banner {
-	background: url(../careers/img/beer_coffee_bike.png) -610px -50px no-repeat;
+	background: url(../img/beer_coffee_bike.png) -610px -50px no-repeat;
 	width: 287px;
 	height: 310px;
 	margin-top: 20px;
 }
 
 .page-career .beer-banner {
-	background: url(../careers/img/beer_coffee_bike.png) -200px 0 no-repeat;
+	background: url(../img/beer_coffee_bike.png) -200px 0 no-repeat;
 	width: 370px;
 	height: 433px;
 	margin-top: 150px;
@@ -561,7 +561,7 @@ $white-text: #fefefe;
 
 .page-career .sketch-line {
 	border: none;
-	background: url(../careers/img/sketch_line.png) center top no-repeat;
+	background: url(../img/sketch_line.png) center top no-repeat;
 	background-size: 100% 200%;
 	height: 137px;
 	width: 100%;
@@ -830,6 +830,19 @@ $white-text: #fefefe;
 		-o-transform: scale(0.5);
 		transform: scale(0.5);
 	}
+}
+
+.job-post-closed {
+	position: fixed;
+	bottom: 0;
+	background: black;
+	background: rgba(80,0,0,0.5);
+	text-align: center;
+	z-index: 99;
+	width: 100%;
+	padding: 1em;
+	color: white;
+
 }
 
 /* ==========================================================================

@@ -1,4 +1,4 @@
 naustudio
 =========
 
-Nau Studio temporary web page
+Nau Studio Careers and other static pages.
