@@ -1,0 +1,86 @@
+/* © 2014 NauStud.io - All rights reserved
+ * @author Thanh Tran
+ */
+html, body {
+	height: 100%;
+}
+.page-career--dec14 {
+	.page-header {
+		background: white;
+		box-shadow: 0 3px 5px 0 rgba(0,0,0,0.2);
+		height: 50px;
+		padding: 10px 0;
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 1;
+	}
+
+	.wewant-banner {
+		background-image: url(../img/bg-blackboard.jpg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		position: fixed;
+		top: 0;
+		height: 100%;
+
+		.nau-logo {
+			top: 0;
+			margin-top: 450px;
+		}
+	}
+
+	.who-we-are-header {
+		margin-top: 0;
+	}
+
+	.content {
+		background: white;
+		margin-top: 650px;
+		box-shadow: 0 -5px 8px 0 rgba(0,0,0,0.5);
+	}
+
+	.main {
+		&.iscroll {
+			height: 100%;
+			overflow: hidden;
+
+			.scroll-content {
+				overflow: hidden;
+			}
+		}
+	}
+}
+
+
+/* Nexus 7 portrait*/
+@media only screen and (max-width: 650px) {
+	.page-career--dec14 {
+
+		.content {
+			margin-top: 90%;
+		}
+
+		.wewant-banner {
+			.nau-logo {
+				margin-top: 62%;
+			}
+		}
+	}
+}
+
+/* Iphone / Nexus 4 portrait*/
+@media only screen and (max-width: 384px) {
+	.page-career--dec14 {
+		.content {
+			margin-top: 100%;
+		}
+		.wewant-banner {
+			// .nau-logo {
+			// 	margin-top: 40%;
+			// }
+		}
+	}
+
+}
+
