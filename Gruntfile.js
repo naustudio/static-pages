@@ -30,9 +30,9 @@ module.exports = function (grunt) {
 
 				files: [{
 					expand: true,
-					cwd: '<%= config.app %>/careers/css/',
-					src: ['*.scss'],
-					dest: '<%= config.app %>/careers/css/',
+					cwd: '<%= config.app %>/careers/',
+					src: ['*/*.scss'],
+					dest: '<%= config.app %>/careers/',
 					ext: '.css'
 				}]
 			},
@@ -56,7 +56,7 @@ module.exports = function (grunt) {
 				browsers: ['last 2 version', 'ie >= 9', 'opera >= 12']
 			},
 			careers: {
-				src: '<%= config.app %>/careers/css/*.css'
+				src: '<%= config.app %>/careers/{,*/}*.css'
 			},
 			dist: {
 				src: '<%= config.dist %>/css/*.css'
@@ -66,7 +66,7 @@ module.exports = function (grunt) {
 		watch: {
 			sass: {
 				files: [
-					'<%= config.app %>/careers/css/*.scss'
+					'<%= config.app %>/careers/{,*/}*.scss'
 				],
 				tasks: ['sass:careers', 'autoprefixer:careers']
 			},
@@ -75,9 +75,9 @@ module.exports = function (grunt) {
 					livereload: '<%= connect.options.livereload %>'
 				},
 				files: [
-					'<%= config.app %>/*.html',
-					'<%= config.app %>/js/**/*.js',
-					'<%= config.app %>/css/*.css'
+					'<%= config.app %>careers/{,*/}*.html',
+					'<%= config.app %>careers/{,*/}*.js',
+					'<%= config.app %>careers/{,*/}*.css'
 				]
 			}
 		},
@@ -118,7 +118,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('default', ['serve']);
 
 	// Compile CSS
-	grunt.registerTask('css-dev', ['sass:careers']);
+	grunt.registerTask('css-dev', ['sass:careers', 'autoprefixer:careers']);
 
 	grunt.registerTask('serve', 'Server the app for testing', function() {
 		grunt.task.run([
