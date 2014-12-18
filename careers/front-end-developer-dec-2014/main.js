@@ -43,12 +43,13 @@
 
     function onScroll() {
         //getting cross-browser body scroll position, according to this: http://forums.asp.net/t/1618316.aspx
+        //this.y is the result of IScroll scroll positioning probing, its value is reversed of scrollTop
         var scrollTop = - this.y || body.scrollTop || doc.documentElement.scrollTop || win.pageYOffset || 0; /* jshint ignore:line */
         var delta = (lastScrollTop - scrollTop);
         var isVisible = (scrollTop > 300 && delta > 0);
         var parallaxY = - (scrollTop * 0.3);
 
-        console.log('onscroll', lastScrollTop,  scrollTop, lastScrollTop - scrollTop, parallaxY);
+        // console.log('onscroll', lastScrollTop,  scrollTop, lastScrollTop - scrollTop, parallaxY);
         lastScrollTop = scrollTop;
 
         if (isVisible !== headerVisible) {
