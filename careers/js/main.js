@@ -1,3 +1,6 @@
+/* © 2014 NauStud.io
+ * @author Thanh Tran
+ */
 // Avoid `console` errors in browsers that lack a console.
 (function() {
     'use strict';
