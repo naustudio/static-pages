@@ -1,0 +1,13 @@
+/* ==========================================================================
+   Webfont
+   ========================================================================== */
+@font-face {
+    font-family: 'Happyfox-Condensed';
+    src: url('fonts/happyfox-condensed-webfont.eot');
+    src: url('fonts/happyfox-condensed-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/happyfox-condensed-webfont.woff') format('woff'),
+         url('fonts/happyfox-condensed-webfont.ttf') format('truetype'),
+         url('fonts/happyfox-condensed-webfont.svg#happy_foxcondensed') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

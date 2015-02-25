@@ -910,12 +910,20 @@ $white-text: #fefefe;
 	position: fixed;
 	bottom: 0;
 	background: black;
-	background: rgba(80,0,0,0.5);
+	background: rgba(80,0,0,0.8);
 	text-align: center;
 	z-index: 99;
 	width: 100%;
 	padding: 1em;
 	color: white;
+
+	a {
+		color: #b0a45d;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
 }
 
 /* ==========================================================================
